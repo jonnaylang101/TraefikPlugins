@@ -1,0 +1,22 @@
+http:
+  routers:
+    my-router:
+      rule: path(`/requestid`)
+      service: service-foo
+      entryPoints:
+      - http
+      middlewares:
+      - my-plugin
+
+  services:
+   service-foo:
+      loadBalancer:
+        servers:
+          - url: http://127.0.0.1:5000
+  
+  middlewares:
+    my-plugin:
+      plugin:
+        example:
+          headers:
+            Foo: Bar

@@ -1,0 +1,23 @@
+api:
+  dashboard: true
+  insecure: true
+
+pilot:
+  token: 11111111-1111-1111-1111-111111111111
+
+log:
+  level: DEBUG
+
+experimental:
+  localPlugins:
+    example:
+      moduleName: github.com/jonnaylang101/requestid
+entryPoints:
+  http:
+    address: ":8000"
+    forwardedHeaders:
+      insecure: true
+
+providers:
+  file:
+    filename: rules-traefikrequestid.yml

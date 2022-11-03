@@ -1,0 +1,5 @@
+# ignore traefik binary
+traefik
+CHANGELOG.md
+LICENSE.md
+**/vendor/*
